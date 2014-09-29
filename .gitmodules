@@ -1,0 +1,3 @@
+[submodule "ecwid-ajax-indexing-php-lib"]
+	path = lib
+	url = http://github.com/ecwid/ecwid-ajax-indexing-php-lib
