@@ -17,40 +17,47 @@ function ecwid_embed_svg($name) {
       <div class="input">
         <div>
           <input
-            id="ecwid_show_search_box"
-            name="ecwid_show_search_box"
+            id="ecwid_shopping_cart_display_search"
+            name="ecwid_shopping_cart_display_search"
             type="checkbox"
-            <?php if (variable_get('ecwid_shopping_cart_show_search_box')): ?>
+            <?php if (variable_get('ecwid_shopping_cart_display_search')): ?>
               checked="checked"
             <?php endif; ?>
             />
         </div>
       </div>
       <div class="label">
-        <label for="ecwid_show_search_box">
+        <label for="ecwid_shopping_cart_display_search">
           <?php echo t('Display search box above products'); ?>
         </label>
       </div>
+      <div class="note">
+        <?php echo sprintf(t('Or you can add search box to your website\'s toolbar using <a href="%s">Drupal native blocks</a>'), url('admin/structure/block')); ?>
+      </div>
     </div>
 
     <div class="pure-control-group small-input">
       <div class="input">
         <div>
           <input
-            id="ecwid_show_categories"
-            name="ecwid_show_categories"
+            id="ecwid_shopping_cart_display_categories"
+            name="ecwid_shopping_cart_display_categories"
             type="checkbox"
-            <?php if (variable_get('ecwid_shopping_cart_show_categories')): ?>
+            <?php if (variable_get('ecwid_shopping_cart_display_categories')): ?>
               checked="checked"
             <?php endif; ?>
             />
         </div>
       </div>
       <div class="label">
-        <label for="ecwid_show_categories">
+        <label for="ecwid_shopping_cart_display_categories">
           <?php echo t('Display horizontal categories above products'); ?>
         </label>
       </div>
+
+      <div class="note">
+        <?php echo sprintf(t('Or you can add vertical categories to your website\'s toolbar using <a href="%s">Drupal native blocks</a>'), url('admin/structure/block')); ?>
+      </div>
     </div>
 
 
@@ -58,17 +65,17 @@ function ecwid_embed_svg($name) {
       <div class="input">
         <div>
           <input
-            id="ecwid_enable_minicart"
-            name="ecwid_enable_minicart"
+            id="ecwid_shopping_cart_display_minicart"
+            name="ecwid_shopping_cart_display_minicart"
             type="checkbox"
-            <?php if (variable_get('ecwid_enable_minicart')): ?>
+            <?php if (variable_get('ecwid_shopping_cart_display_minicart')): ?>
               checked="checked"
             <?php endif; ?>
             />
         </div>
       </div>
       <div class="label">
-        <label for="ecwid_enable_minicart">
+        <label for="ecwid_shopping_cart_display_minicart">
           <?php echo t('Enable minicart attached to horizontal categories'); ?>
         </label>
       </div>

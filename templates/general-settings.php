@@ -14,12 +14,12 @@
         <?php if (array_key_exists('settings-updated', $_GET)): ?>
 
         <div class="main-message"><?php echo t('Congratulations!'); ?></div>
-        <div class="secondary-message"?><?php echo t('Your Ecwid store is now connected to your WordPress website'); ?></div>
+        <div class="secondary-message"?><?php echo t('Your Ecwid store is now connected to your Drupal website'); ?></div>
 
         <?php else: ?>
 
         <div class="main-message"><?php echo t('Greetings!'); ?></div>
-        <div class="secondary-message"?><?php echo t('Your Ecwid store is connected to your WordPress website'); ?></div>
+        <div class="secondary-message"?><?php echo t('Your Ecwid store is connected to your Drupal website'); ?></div>
         <?php endif; ?>
       </div>
     </div>
@@ -31,7 +31,7 @@
         </span>
       </div>
       <div class="right two-buttons">
-        <a class="pure-button" target="_blank" href="https://my.ecwid.com/cp/?source=wporg#t1=&t2=Dashboard">
+        <a class="pure-button" target="_blank" href="https://my.ecwid.com/cp/?source=drupal7#t1=&t2=Dashboard">
           <?php echo t('Control panel'); ?>
         </a>
         <a class="pure-button" target="_blank" href="<?php echo check_plain(url('store')); ?>">
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <?php if (_ecwid_shopping_cart_get_storeid() != 1003 && ecwid_is_api_enabled(_ecwid_shopping_cart_get_storeid())): ?>
+    <?php if (_ecwid_shopping_cart_get_storeid() == 1003 || !ecwid_is_api_enabled(_ecwid_shopping_cart_get_storeid())): ?>
     <div class="section account-section">
       <div class="left">
         <div class="secondary-info">
@@ -49,7 +49,7 @@
       </div>
 
       <div class="right">
-        <a target="_blank" class="pure-button pure-button-primary" href="http://www.ecwid.com/plans-and-pricing.html?source=drupal">
+        <a target="_blank" class="pure-button pure-button-primary" href="http://www.ecwid.com/plans-and-pricing.html?source=drupal7">
           <?php echo t('Upgrade'); ?>
         </a>
       </div>
@@ -67,6 +67,6 @@
     </div>
 
     <hr />
-    <p><?php echo t('Questions? Visit <a href="http://help.ecwid.com/?source=wporg">Ecwid support center</a>'); ?></p>
+    <p><?php echo t('Questions? Visit <a href="http://help.ecwid.com/?source=drupal7">Ecwid support center</a>'); ?></p>
   </fieldset>
 </div>

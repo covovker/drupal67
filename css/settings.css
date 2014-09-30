@@ -38,6 +38,7 @@
 .pure-form.ecwid-settings a.pure-button:not(.pure-button-primary):hover {
   border-color: #137ebe;
 	color: #137ebe;
+	text-decoration: none;
 }
 
 .pure-form.ecwid-settings .pure-button.pure-button-primary {

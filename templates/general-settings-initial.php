@@ -31,10 +31,10 @@
 						<?php echo t('Create a new Ecwid account which you will use to manage your store and inventory. The registration is free.'); ?>
 					</div>
 					<div class="ecwid-account-buttons">
-						<a class="pure-button pure-button-secondary" target="_blank" href="https://my.ecwid.com/cp/?source=wporg#register">
+						<a class="pure-button pure-button-secondary" target="_blank" href="https://my.ecwid.com/cp/?source=drupal7#register">
 							<?php echo t('Create new Ecwid account'); ?>
 						</a>
-						<a class="pure-button pure-button-secondary" target="_blank" href="https://my.ecwid.com/cp/?source=wporg#t1=&t2=Dashboard">
+						<a class="pure-button pure-button-secondary" target="_blank" href="https://my.ecwid.com/cp/?source=drupal7#t1=&t2=Dashboard">
 							<?php echo t('I already have Ecwid account, sign in'); ?>
 						</a>
 					</div>
@@ -61,12 +61,12 @@
 							placeholder="<?php echo t('Store ID'); ?>"
 							value="<?php if (_ecwid_shopping_cart_get_storeid() != 1003) echo check_plain(_ecwid_shopping_cart_get_storeid()); ?>"
 							/>
-						<button type="submit" class="pure-button pure-button-primary" name="op" value="Save configuration"><?php echo t('Save and connect your Ecwid store to the site'); ?></button>
+						<button type="submit" class="pure-button pure-button-primary" name="op" value="Save configuration'"><?php echo t('Save and connect your Ecwid store to the site'); ?></button>
 					</div>
 
 				</li>
 			</ol>
 			<hr />
-			<p><?php echo t('Questions? Visit <a href="http://help.ecwid.com/?source=wporg">Ecwid support center</a>'); ?></p>
+			<p><?php echo t('Questions? Visit <a href="http://help.ecwid.com/?source=drupal7">Ecwid support center</a>'); ?></p>
 		</fieldset>
 </div>
