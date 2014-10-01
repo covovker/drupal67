@@ -8,7 +8,7 @@
 			<div class="greeting-box">
 
 				<div class="image-container">
-					<img class="greeting-image" src="<?php echo url(drupal_get_path('module', 'ecwid_shopping_cart'), array('absolute' => true)); ?>/images/store_inprogress.png" width="142" />
+					<img class="greeting-image" src="<?php echo file_create_url(drupal_get_path('module', 'ecwid_shopping_cart'), array('absolute' => true)); ?>/images/store_inprogress.png" width="142" />
 				</div>
 
 				<div class="messages-container">
@@ -17,7 +17,7 @@
 						<?php echo t('Thank you for choosing Ecwid to build your online store'); ?>
 					</div>
 					<div class="secondary-message">
-						<?php echo t('The first step towards opening your online business: <br />Let’s get started and add a store to your WordPress website in <strong>3</strong> simple steps.'); ?>
+						<?php echo t('The first step towards opening your online business: <br />Let’s get started and add a store to your Drupal website in <strong>3</strong> simple steps.'); ?>
 					</div>
 				</div>
 

@@ -466,7 +466,14 @@ display: none;
 	margin-bottom: 10px;
 }
 
+.ecwid-settings.general-settings .note a {
+	text-decoration: underline;
+}
 
 #ecwid-shopping-cart-general-page .form-actions {
 	display: none;
+}
+
+#ecwid_shopping_cart_module_minicart > .ecwid {
+	z-index: 200 !important;
 }

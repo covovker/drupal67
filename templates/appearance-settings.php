@@ -9,80 +9,17 @@ function ecwid_embed_svg($name) {
 <div class="pure-form ecwid-settings appearance-settings">
   <h2><?php echo t('Ecwid Shopping Cart — Appearance settings'); ?></h2>
 
+  <div class="region region-help">
+    <div id="block-system-help" class="block block-system">
+      <div class="content">
+        <p><?php echo t('This page allows you to adjust Ecwid layout styles and behavior according to your needs. You can also manage Ecwid categories, search and minicart widgets on the <a href="!url">Structure → Blocks</a> page.', array('!url' => url('admin/structure/block'))); ?></p>
+      </div>
+    </div>
+  </div>
+
   <input type="hidden" name="settings_section" value="appearance" />
 
   <fieldset>
-
-    <div class="pure-control-group small-input">
-      <div class="input">
-        <div>
-          <input
-            id="ecwid_shopping_cart_display_search"
-            name="ecwid_shopping_cart_display_search"
-            type="checkbox"
-            <?php if (variable_get('ecwid_shopping_cart_display_search')): ?>
-              checked="checked"
-            <?php endif; ?>
-            />
-        </div>
-      </div>
-      <div class="label">
-        <label for="ecwid_shopping_cart_display_search">
-          <?php echo t('Display search box above products'); ?>
-        </label>
-      </div>
-      <div class="note">
-        <?php echo sprintf(t('Or you can add search box to your website\'s toolbar using <a href="%s">Drupal native blocks</a>'), url('admin/structure/block')); ?>
-      </div>
-    </div>
-
-    <div class="pure-control-group small-input">
-      <div class="input">
-        <div>
-          <input
-            id="ecwid_shopping_cart_display_categories"
-            name="ecwid_shopping_cart_display_categories"
-            type="checkbox"
-            <?php if (variable_get('ecwid_shopping_cart_display_categories')): ?>
-              checked="checked"
-            <?php endif; ?>
-            />
-        </div>
-      </div>
-      <div class="label">
-        <label for="ecwid_shopping_cart_display_categories">
-          <?php echo t('Display horizontal categories above products'); ?>
-        </label>
-      </div>
-
-      <div class="note">
-        <?php echo sprintf(t('Or you can add vertical categories to your website\'s toolbar using <a href="%s">Drupal native blocks</a>'), url('admin/structure/block')); ?>
-      </div>
-    </div>
-
-
-    <div class="pure-control-group small-input">
-      <div class="input">
-        <div>
-          <input
-            id="ecwid_shopping_cart_display_minicart"
-            name="ecwid_shopping_cart_display_minicart"
-            type="checkbox"
-            <?php if (variable_get('ecwid_shopping_cart_display_minicart')): ?>
-              checked="checked"
-            <?php endif; ?>
-            />
-        </div>
-      </div>
-      <div class="label">
-        <label for="ecwid_shopping_cart_display_minicart">
-          <?php echo t('Enable minicart attached to horizontal categories'); ?>
-        </label>
-      </div>
-      <div class="note">
-        <?php echo t("You should disable this option, if you added minicart to your website's&nbsp;sidebar"); ?>
-      </div>
-    </div>
 
     <div class="pure-control-group small-input">
       <div class="input">
@@ -106,7 +43,6 @@ function ecwid_embed_svg($name) {
     </div>
 
     <hr />
-
 
     <div class="pure-control-group">
       <label class="products-per-page-label"><?php echo t('Number of products per page'); ?></label>
@@ -175,6 +111,47 @@ function ecwid_embed_svg($name) {
 
     <hr />
 
+
+    <div class="pure-control-group">
+      <label for="ecwid_shopping_cart_default_category_id">
+        <?php echo t('Default category id'); ?>
+      </label>
+
+      <?php if (isset($categories)): ?>
+        <select
+          name="ecwid_shopping_cart_default_category_id"
+          id="ecwid_shopping_cart_default_category_id"
+          >
+          <option
+            value=""
+            <?php if (_ecwid_shopping_cart_default_category_id() == 0): ?>
+            selected="selected"'
+          <?php endif; ?>
+          >
+          <?php echo t('Store root category'); ?>
+          </option>
+
+          <?php foreach ($categories as $category): ?>
+            <option
+            value="<?php echo $category['id']; ?>"
+            <?php if (_ecwid_shopping_cart_default_category_id() == $category['id']): ?>
+              selected="selected"'
+            <?php endif; ?>
+            >
+            <?php echo check_plain($category['name']); ?>
+            </option>
+          <?php endforeach; ?>
+        </select>
+      <?php else: ?>
+        <input
+          type="text"
+          name="ecwid_shopping_cart_default_category_id"
+          id="ecwid_shopping_cart_default_category_id"
+          value="<?php echo check_plain(_ecwid_shopping_cart_default_category_id()); ?>"
+          />
+      <?php endif; ?>
+    </div>
+
     <div class="pure-control-group">
       <label for="ecwid_shopping_cart_view_mode_on_product">
         <?php echo t('Default view mode on product pages'); ?>
@@ -211,18 +188,7 @@ function ecwid_embed_svg($name) {
       </select>
     </div>
 
-    <div class="pure-control-group">
-      <label for="ecwid_shopping_cart_default_category_id">
-        <?php echo t('Default category id'); ?>
-      </label>
-
-      <input
-        type="text"
-        name="ecwid_shopping_cart_default_category_id"
-        id="ecwid_shopping_cart_default_category_id"
-        value="<?php echo check_plain(_ecwid_shopping_cart_default_category_id()); ?>"
-        />
-    </div>
+    <hr />
 
   </fieldset>
 </div>

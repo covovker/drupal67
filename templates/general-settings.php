@@ -7,7 +7,7 @@
 
     <div class="greeting-box complete">
       <div class="image-container">
-        <img class="greeting-image" src="<?php echo url(drupal_get_path('module', 'ecwid_shopping_cart'), array('absolute' => true)); ?>/images/store_ready.png" width="142" />
+        <img class="greeting-image" src="<?php echo file_create_url(drupal_get_path('module', 'ecwid_shopping_cart'), array('absolute' => true)); ?>/images/store_ready.png" width="142" />
       </div>
 
       <div class="messages-container">
