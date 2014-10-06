@@ -1,6 +1,6 @@
 ;$Id: ecwid_shopping_cart.info,v 1.1 2010/03/04 13:04:26 ecwid Exp $
 name = "Ecwid Shopping Cart"
-description = "Ecwid is a free full-fledged shopping cart that can be easily add to any site. It offers the performance and flexibility you need, with none of the hassles you don't. More about Drupal and Ecwid: http://kb.ecwid.com/Drupal"
+description = "Ecwid is a powerful and easy-to-use shopping cart solution that seamlessly integrates with your Drupal website. Join over 550,000 sellers in 175 countries and sell globally with over 40 international payment options, real-time shipping integrations and support of 45 languages. Learn more about Ecwid at <a target='_blank' href='http://www.ecwid.com/?source=drupal7'>www.ecwid.com</a> ."
 core = 7.x
 package = "E-Commerce"
 

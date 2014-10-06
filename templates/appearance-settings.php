@@ -12,7 +12,7 @@ function ecwid_embed_svg($name) {
   <div class="region region-help">
     <div id="block-system-help" class="block block-system">
       <div class="content">
-        <p><?php echo t('This page allows you to adjust Ecwid layout styles and behavior according to your needs. You can also manage Ecwid categories, search and minicart widgets on the <a href="!url">Structure → Blocks</a> page.', array('!url' => url('admin/structure/block'))); ?></p>
+        <p><?php echo t('Adjust your store layout using the options below. You can also add categories, search and minicart widgets on the <a href="!url">Structure → Blocks</a> page.', array('!url' => url('admin/structure/block'))); ?></p>
       </div>
     </div>
   </div>

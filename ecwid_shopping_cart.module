@@ -193,7 +193,7 @@ function ecwid_shopping_cart_block_view($delta) {
       $block['subject'] = t('');
       $ecwid_block_widget = '<div id="ecwid_shopping_cart_module_minicart">'
         . '<script type="text/javascript"> xMinicart("style=",'
-        . '"layout=' . variable_get('ecwid_shopping_cart_minicart_layout') . '"'
+        . '"layout=' . variable_get('ecwid_shopping_cart_minicart_layout', 'MiniAttachToProductBrowser') . '"'
         . ');</script></div>';
       break;
     case 'ecwid_vcategories':
@@ -380,7 +380,7 @@ function ecwid_shopping_cart_admin() {
 function ecwid_shopping_cart_menu() {
   $items = array();
   $items['admin/settings/ecwid_shopping_cart'] = array(
-    'title' => 'Ecwid Shopping Cart module settings',
+    'title' => 'Ecwid Store',
     'description' => 'You can setup your store settings here.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ecwid_shopping_cart_general_page'),
@@ -808,10 +808,13 @@ function ecwid_shopping_cart_showstore() {
   $ajaxIndexingContent = '';
 
   $api_enabled = false;
-  $time = cache_get('last_ecwid_api_check');
-  if (!$time || time() - $time->data < 60*60*3) {
+  $cached = cache_get('ecwid_api_enabled');
+
+  if (!$cached || time() - $cached->created > 60*60*3) {
     $api_enabled = ecwid_is_api_enabled($store_id);
-    cache_set('last_ecwid_api_check', time());
+    cache_set('ecwid_api_enabled', $api_enabled);
+  } else {
+    $api_enabled = $cached->data;
   }
 
   $integration_code = '';
