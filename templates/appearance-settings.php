@@ -21,27 +21,6 @@ function ecwid_embed_svg($name) {
 
   <fieldset>
 
-    <div class="pure-control-group small-input">
-      <div class="input">
-        <div>
-          <input
-            id="ecwid_shopping_cart_categories_per_row"
-            name="ecwid_shopping_cart_categories_per_row"
-            type="text"
-            class="number"
-            value="<?php echo check_plain(_ecwid_shopping_cart_categories_per_row()); ?>"
-          />
-        </div>
-      </div>
-      <div class="label">
-        <label for="ecwid_shopping_cart_categories_per_row">
-          <?php echo t('Number of categories per row'); ?>
-        </label>
-      </div>
-      <div class="note">
-      </div>
-    </div>
-
     <hr />
 
     <div class="pure-control-group">
@@ -111,10 +90,9 @@ function ecwid_embed_svg($name) {
 
     <hr />
 
-
     <div class="pure-control-group">
       <label for="ecwid_shopping_cart_default_category_id">
-        <?php echo t('Default category id'); ?>
+        <?php echo isset($categories) ? t('Category shown by default') : t('Default category id'); ?>
       </label>
 
       <?php if (isset($categories)): ?>
@@ -150,6 +128,27 @@ function ecwid_embed_svg($name) {
           value="<?php echo check_plain(_ecwid_shopping_cart_default_category_id()); ?>"
           />
       <?php endif; ?>
+    </div>
+
+    <div class="pure-control-group small-input">
+      <div class="input">
+        <div>
+          <input
+            id="ecwid_shopping_cart_categories_per_row"
+            name="ecwid_shopping_cart_categories_per_row"
+            type="text"
+            class="number"
+            value="<?php echo check_plain(_ecwid_shopping_cart_categories_per_row()); ?>"
+            />
+        </div>
+      </div>
+      <div class="label">
+        <label for="ecwid_shopping_cart_categories_per_row">
+          <?php echo t('Number of categories per row'); ?>
+        </label>
+      </div>
+      <div class="note">
+      </div>
     </div>
 
     <div class="pure-control-group">

@@ -160,11 +160,11 @@ function ecwid_shopping_cart_block_configure($delta = '')
     $form['ecwid_minicart_layout'] = array(
       '#type'  => 'select',
       '#title' => t('Minicart layout'),
-      '#default_value' => variable_get('ecwid_shopping_cart_minicart_layout', ''),
+      '#default_value' => variable_get('ecwid_shopping_cart_minicart_layout', 'MiniAttachToProductBrowser'),
       '#options' => array(
-        ''                           => t('Normal fixed'),
-        'attachToCategories'         => t('Normal attached to categories'),
-        'floating'                   => t('Normal floating'),
+        ''                           => t('Fixed'),
+        'attachToCategories'         => t('Attached to categories'),
+        'floating'                   => t('Floating'),
         'Mini'                       => t('Mini fixed'),
         'MiniAttachToProductBrowser' => t('Mini attached to product browser')
       )

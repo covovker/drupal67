@@ -477,3 +477,8 @@ display: none;
 #ecwid_shopping_cart_module_minicart > .ecwid {
 	z-index: 200 !important;
 }
+
+.ecwid-settings #block-system-help {
+	padding-left: 15px;
+	margin-bottom: 30px;
+}
